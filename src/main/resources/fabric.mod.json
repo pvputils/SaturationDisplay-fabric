@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "saturationdisplay",
+  "version": "${version}",
+  "name": "Saturation Display",
+  "description": "Displays the player's current saturation above the hunger bar.",
+  "authors": ["Eum3", "Memeasaur"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.memeasaur.saturationdisplayFabric.client.SaturationdisplayFabricClient"
+    ]
+  },
+  "mixins": [
+    "saturationdisplay-fabric.mixins.json",
+    {
+      "config": "saturationdisplay-fabric.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

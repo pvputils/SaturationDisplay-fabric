@@ -1,0 +1,9 @@
+{
+  "key.category.saturationdisplay.general": "Saturation Display",
+  "key.saturationdisplay.options": "Open Saturation Display options",
+  "screen.saturationdisplay.title": "Saturation Display Options",
+  "screen.saturationdisplay.enabled": "Display saturation: %s",
+  "screen.saturationdisplay.number": "Display saturation number: %s",
+  "screen.saturationdisplay.color": "Color saturation number: %s",
+  "screen.saturationdisplay.outline": "Outline hunger bar: %s"
+}

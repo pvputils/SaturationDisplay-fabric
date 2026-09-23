@@ -1,5 +1,5 @@
 {
-  "key.category.saturationdisplay.general": "Saturation Display",
+  "key.categories.saturationdisplay": "Saturation Display",
   "key.saturationdisplay.options": "Open Saturation Display options",
   "screen.saturationdisplay.title": "Saturation Display Options",
   "screen.saturationdisplay.enabled": "Display saturation: %s",

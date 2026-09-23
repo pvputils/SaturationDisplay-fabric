@@ -7,3 +7,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+// codex start
+rootProject.name = 'SaturationDisplay-fabric'
+// codex end

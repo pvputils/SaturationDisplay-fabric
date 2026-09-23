@@ -1,7 +1,9 @@
 package com.memeasaur.saturationdisplayFabric.client;
 
 import com.memeasaur.saturationdisplayFabric.SaturationDisplayConfig;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+// codex start
+import net.minecraft.client.gui.GuiGraphics; // codex (import net.minecraft.client.gui.GuiGraphicsExtractor;)
+// codex end
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -41,12 +43,14 @@ final class SaturationOptionsScreen extends Screen {
         super.onClose();
     }
 
-//    @Override
-//    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-//        extractBackground(graphics, mouseX, mouseY, partialTick);
-//        graphics.centeredText(this.font, this.title, this.width / 2, 40, 0xFFFFFF);
-//        super.extractRenderState(graphics, mouseX, mouseY, partialTick);
-//    }
+// codex start
+    @Override // codex (//    @Override)
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) { // codex (//    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {)
+        renderBackground(graphics, mouseX, mouseY, partialTick); // codex (//        extractBackground(graphics, mouseX, mouseY, partialTick);)
+        graphics.drawCenteredString(this.font, this.title, this.width / 2, 40, 0xFFFFFFFF); // codex (//        graphics.centeredText(this.font, this.title, this.width / 2, 40, 0xFFFFFF);)
+        super.render(graphics, mouseX, mouseY, partialTick); // codex (//        super.extractRenderState(graphics, mouseX, mouseY, partialTick);)
+    } // codex (//    })
+// codex end
 
     private static Component label(String key, boolean value) {
         return Component.translatable(key, Component.translatable(value ? "options.on" : "options.off"));

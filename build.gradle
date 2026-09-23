@@ -1,5 +1,7 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.18-SNAPSHOT'
+    // codex start
+    id 'fabric-loom' version '1.9.2' // codex (id 'net.fabricmc.fabric-loom' version '1.18-SNAPSHOT')
+    // codex end
     id 'maven-publish'
 }
 
@@ -38,9 +40,16 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    // codex start
+    mappings loom.officialMojangMappings()
+    // codex end
+    // codex start
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}" // codex (implementation "net.fabricmc:fabric-loader:${project.loader_version}")
+    // codex end
 
-    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    // codex start
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}" // codex (implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
+    // codex end
 }
 
 processResources {
@@ -56,7 +65,9 @@ processResources {
     }
 }
 
-def targetJavaVersion = 25
+// codex start
+def targetJavaVersion = 21 // codex (def targetJavaVersion = 25)
+// codex end
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly
@@ -80,7 +91,9 @@ java {
 }
 
 jar {
-    from("LICENSE") {
+    // codex start
+    from("LICENSE.txt") { // codex (from("LICENSE") {)
+    // codex end
         rename { "${it}_${project.archives_base_name}" }
     }
 }
